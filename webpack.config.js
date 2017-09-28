@@ -1,6 +1,7 @@
 module.exports = {
   entry: './src/main.js',
   output: {
+    publicPath: './public',
     filename: 'bundle.js'
   },
   module: {
@@ -13,6 +14,8 @@ module.exports = {
     ]
   },
   devServer: {
-    port: 3000
+    contentBase: './public',
+    port: 3000,
+    hot: true
   }
 }
