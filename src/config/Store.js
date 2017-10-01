@@ -3,7 +3,6 @@ import { createStore, applyMiddleware } from 'redux'
 import rootReducer from '../reducers'
 import apolloClient from './ApolloClient'
 
-// const configureStore = createStore(RootReducer)
 const configureStore = createStore(
   rootReducer,
   {},
