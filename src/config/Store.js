@@ -1,7 +1,12 @@
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 
-import RootReducer from '../reducers'
+import rootReducer from '../reducers'
+import apolloClient from './ApolloClient'
 
-const configureStore = createStore(RootReducer)
+const configureStore = createStore(
+  rootReducer,
+  {},
+  applyMiddleware(apolloClient.middleware())
+)
 
 export default configureStore

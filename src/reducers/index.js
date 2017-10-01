@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux'
 
-import TrackersReducer from './TrackersReducer'
+import trackersReducer from './TrackersReducer'
+import apolloClient from '../config/ApolloClient'
 
 const rootReducer = combineReducers({
-  TrackersReducer
+  apollo: apolloClient.reducer(),
+  trackersReducer
 })
-
 
 export default rootReducer
