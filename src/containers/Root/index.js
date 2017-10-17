@@ -1,14 +1,14 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 
-import Sidebar from '../../components/Sidebar'
+import Sidenav from '../../components/Sidenav'
 import Worksheets from '../Worksheet'
 
 class Root extends Component {
   render() {
     return(
       <div>
-        <Sidebar />
+        <Sidenav />
 
         <main>
           <Route
