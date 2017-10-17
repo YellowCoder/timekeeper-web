@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 
 import Sidenav from '../../components/Sidenav'
-import Worksheets from '../Worksheet'
+import WorksheetList from '../WorksheetList'
 
 class Root extends Component {
   render() {
@@ -13,7 +13,7 @@ class Root extends Component {
         <main>
           <Route
             path='/worksheets'
-            component={ Worksheets }
+            component={ WorksheetList }
           />
         </main>
       </div>
