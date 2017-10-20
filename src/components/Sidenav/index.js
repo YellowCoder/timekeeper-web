@@ -1,17 +1,18 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-class Sidebar extends Component {
+class Sidenav extends Component {
   render() {
     return(
-      <div>
+      <nav>
         <ul>
           <li><Link to='/'> Home </Link></li>
           <li><Link to='/worksheets'> Worksheets </Link></li>
+          <li><Link to='/signout'> Sign out </Link></li>
         </ul>
-      </div>
+      </nav>
     )
   }
 }
 
-export default Sidebar
+export default Sidenav

@@ -1,19 +1,19 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 
-import Sidebar from '../../components/Sidebar'
-import Worksheets from '../Worksheet'
+import Sidenav from '../../components/Sidenav'
+import WorksheetList from '../WorksheetList'
 
 class Root extends Component {
   render() {
     return(
       <div>
-        <Sidebar />
+        <Sidenav />
 
         <main>
           <Route
             path='/worksheets'
-            component={ Worksheets }
+            component={ WorksheetList }
           />
         </main>
       </div>
