@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-import * as styles from './index.styles'
+import styles from './styles'
 
 class Sidenav extends Component {
   render() {
     return(
-      <nav className={ styles.sidenav }>
+      <nav className={ styles.nav }>
         <ul>
           <li><Link to='/'> Home </Link></li>
           <li><Link to='/worksheets'> Worksheets </Link></li>

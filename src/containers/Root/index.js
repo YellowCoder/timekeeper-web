@@ -4,13 +4,15 @@ import { Route } from 'react-router-dom'
 import Sidenav from '../../components/Sidenav'
 import WorksheetList from '../WorksheetList'
 
+import styles from './styles'
+
 class Root extends Component {
   render() {
     return(
-      <div>
+      <div className={ styles.content }>
         <Sidenav />
 
-        <main>
+        <main className={ styles.main }>
           <Route
             path='/worksheets'
             component={ WorksheetList }
