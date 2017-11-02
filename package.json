@@ -23,14 +23,18 @@
   },
   "dependencies": {
     "babel-eslint": "^8.0.1",
+    "css-loader": "^0.28.7",
     "eslint": "^4.8.0",
     "eslint-plugin-babel": "^4.1.2",
     "eslint-plugin-react": "^7.4.0",
+    "glamor": "^2.20.40",
+    "minireset.css": "^0.0.3",
     "react": "16.0.0",
     "react-apollo": "^1.4.16",
     "react-dom": "16.0.0",
     "react-redux": "5.0.6",
     "react-router-dom": "^4.2.2",
-    "redux": "3.7.2"
+    "redux": "3.7.2",
+    "style-loader": "^0.19.0"
   }
 }

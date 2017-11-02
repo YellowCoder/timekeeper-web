@@ -10,6 +10,9 @@ import apolloClient from './config/ApolloClient'
 
 import Root from './containers/Root'
 
+import 'minireset.css'
+import './config/defaultStyles.css'
+
 render(
   <ApolloProvider store={ store } client={ apolloClient }>
     <BrowserRouter>
