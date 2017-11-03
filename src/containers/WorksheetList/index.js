@@ -17,7 +17,17 @@ class WorksheetList extends Component {
     }).then(({ data }) => {
       const { setCurrentUser } = this.props
       setCurrentUser(data.currentUser)
+      this.loadWorksheets()
     })
+  }
+
+  loadWorksheets() {
+    this.props.client.query({
+      query: query.worksheets
+    }).then(({ data }) => {
+      const { setWorksheets } = this.props
+      setWorksheets(data.worksheets)
+    }) 
   }
 
   render() {
@@ -28,11 +38,13 @@ class WorksheetList extends Component {
 }
 
 const stateMap = (state) => ({
-  currentUser: state.worksheetListReducer.currentUser
+  currentUser: state.worksheetListReducer.currentUser,
+  worksheets: state.worksheetListReducer.worksheets
 })
 
 const dispatchMap = (dispatch, ownProps) => ({
-  setCurrentUser: (user) => dispatch(actions.setCurrentUser(user))
+  setCurrentUser: (user) => dispatch(actions.setCurrentUser(user)),
+  setWorksheets: (worksheets) => dispatch(actions.setWorksheets(worksheets))
 })
 
 export default compose(

@@ -7,3 +7,11 @@ export const currentUser = gql`
     }
   }
 `
+
+export const worksheets = gql`
+  query Worksheets {
+    worksheets: worksheets {
+      id
+    }
+  }
+`
