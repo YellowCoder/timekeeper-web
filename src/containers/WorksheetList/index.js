@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { withApollo } from 'react-apollo'
 
+import List from '../../components/WorksheetList'
+
 import * as query from './query'
 import * as actions from '../../actions/WorksheetList'
 
@@ -17,22 +19,41 @@ class WorksheetList extends Component {
     }).then(({ data }) => {
       const { setCurrentUser } = this.props
       setCurrentUser(data.currentUser)
+      this.loadWorksheets()
     })
   }
 
+  loadWorksheets() {
+    this.props.client.query({
+      query: query.worksheets
+    }).then(({ data }) => {
+      const { setWorksheets } = this.props
+      setWorksheets(data.worksheets)
+    }) 
+  }
+
   render() {
+    const { loading, worksheets } = this.props
+
     return(
-      <div> aaa </div>
+      <div>
+        { loading && <p>Loading</p> }
+
+        { !loading && <List worksheets={ worksheets }/> }
+      </div>
     )
   }
 }
 
 const stateMap = (state) => ({
-  currentUser: state.worksheetListReducer.currentUser
+  currentUser: state.worksheetListReducer.currentUser,
+  worksheets: state.worksheetListReducer.worksheets,
+  loading: state.worksheetListReducer.loading
 })
 
 const dispatchMap = (dispatch, ownProps) => ({
-  setCurrentUser: (user) => dispatch(actions.setCurrentUser(user))
+  setCurrentUser: (user) => dispatch(actions.setCurrentUser(user)),
+  setWorksheets: (worksheets) => dispatch(actions.setWorksheets(worksheets))
 })
 
 export default compose(
