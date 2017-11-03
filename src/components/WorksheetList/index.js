@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class WorksheetList extends Component {
   render() {
@@ -34,6 +35,17 @@ class WorksheetList extends Component {
       </article>
     )
   }
+}
+
+WorksheetList.defaultProps = {
+  worksheets: []
+}
+
+WorksheetList.propTypes = {
+  worksheets: PropTypes.arrayOf(PropTypes.shape({
+    action: PropTypes.string.isRequired,
+    created_at: PropTypes.string.isRequired
+  })).isRequired
 }
 
 export default WorksheetList
