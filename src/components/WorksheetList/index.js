@@ -13,7 +13,6 @@ class WorksheetList extends Component {
               <tr>
                 <th>date</th>
                 <th>action</th>
-                <th>type</th>
                 <th>actions</th>
               </tr>
             </thead>
@@ -23,7 +22,6 @@ class WorksheetList extends Component {
                 <tr key={ index }>
                   <td>{ worksheet.created_at }</td>
                   <td>{ worksheet.action }</td>
-                  <td>{ worksheet.category.name }</td>
                   <td>
                     <a> Edit </a>
                     <a> Delete </a>
