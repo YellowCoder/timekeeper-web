@@ -6,10 +6,7 @@ class Navbar extends Component {
   render() {
     return(
       <nav className={ styles.nav }>
-        <h2> Time keeper </h2>
-        <ul>
-          <li> Log out </li>
-        </ul>
+        <h2 className={ styles.h2 }> Time keeper </h2>
       </nav>
     )
   }

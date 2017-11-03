@@ -1,9 +1,10 @@
 import { css } from 'glamor'
 import sizes from '../../config/styles/sizes'
+import * as colors from '../../config/styles/colors'
 
 export default {
   nav: css({
-    backgroundColor: '#E3EEFF',
+    backgroundColor: colors.sidebarBG,
     display: 'inline-block',
     height: '100%',
     verticalAlign: 'top',
