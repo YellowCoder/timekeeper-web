@@ -2,26 +2,34 @@ import React, { Component } from 'react'
 
 class WorksheetList extends Component {
   render() {
+    const { worksheets } = this.props
+    
     return(
       <article>
         <h1> Worksheets </h1>
         <section>
           <table>
             <thead>
-              <th>date</th>
-              <th>type</th>
-              <th>actions</th>
+              <tr>
+                <th>date</th>
+                <th>action</th>
+                <th>type</th>
+                <th>actions</th>
+              </tr>
             </thead>
 
             <tbody>
-              <tr>
-                <td>01-11-2017</td>
-                <td>Start</td>
-                <td>
-                  <a> Edit </a>
-                  <a> Delete </a>
-                </td>
-              </tr>
+              { worksheets.map((worksheet, index) => (
+                <tr key={ index }>
+                  <td>{ worksheet.created_at }</td>
+                  <td>{ worksheet.action }</td>
+                  <td>{ worksheet.category.name }</td>
+                  <td>
+                    <a> Edit </a>
+                    <a> Delete </a>
+                  </td>
+                </tr>
+              )) }
             </tbody>
           </table>
         </section>
@@ -29,3 +37,5 @@ class WorksheetList extends Component {
     )
   }
 }
+
+export default WorksheetList

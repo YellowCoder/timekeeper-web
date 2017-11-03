@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { withApollo } from 'react-apollo'
 
+import List from '../../components/WorksheetList'
+
 import * as query from './query'
 import * as actions from '../../actions/WorksheetList'
 
@@ -31,15 +33,22 @@ class WorksheetList extends Component {
   }
 
   render() {
+    const { loading, worksheets } = this.props
+
     return(
-      <div> aaa </div>
+      <div>
+        { loading && <p>Loading</p> }
+
+        { !loading && <List worksheets={ worksheets }/> }
+      </div>
     )
   }
 }
 
 const stateMap = (state) => ({
   currentUser: state.worksheetListReducer.currentUser,
-  worksheets: state.worksheetListReducer.worksheets
+  worksheets: state.worksheetListReducer.worksheets,
+  loading: state.worksheetListReducer.loading
 })
 
 const dispatchMap = (dispatch, ownProps) => ({

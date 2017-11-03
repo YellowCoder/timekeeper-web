@@ -1,8 +1,6 @@
 import { css } from 'glamor'
 import sizes from '../../config/styles/sizes'
 
-console.log(sizes)
-
 export default {
   nav: css({
     backgroundColor: '#E3EEFF',
