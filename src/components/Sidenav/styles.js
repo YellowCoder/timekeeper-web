@@ -1,4 +1,7 @@
 import { css } from 'glamor'
+import sizes from '../../config/styles/sizes'
+
+console.log(sizes)
 
 export default {
   nav: css({
@@ -6,6 +9,6 @@ export default {
     display: 'inline-block',
     height: '100%',
     verticalAlign: 'top',
-    width: '200px'
+    width: `${ sizes.sidebar.width }px`
   })
 }

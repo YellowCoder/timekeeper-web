@@ -1,4 +1,5 @@
 import { css } from 'glamor'
+import sizes from '../../config/styles/sizes'
 
 export default {
   content: css({
@@ -8,6 +9,6 @@ export default {
     backgroundColor: '#FAECD8',
     display: 'inline-block',
     height: '100%',
-    width: 'calc(100% - 200px)'
+    width: `calc(100% - ${ sizes.sidebar.width }px)`
   })
 }
