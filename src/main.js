@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { ApolloProvider } from 'react-apollo'
 import {
-  BrowserRouter
+  HashRouter
 } from 'react-router-dom'
 
 import store from './config/Store'
@@ -15,9 +15,9 @@ import './config/defaultStyles.css'
 
 render(
   <ApolloProvider store={ store } client={ apolloClient }>
-    <BrowserRouter>
+    <HashRouter>
       <Root />
-    </BrowserRouter>
+    </HashRouter>
   </ApolloProvider>,
   document.getElementById('root')
 )
