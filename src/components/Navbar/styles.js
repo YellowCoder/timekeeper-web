@@ -9,6 +9,8 @@ export default {
   }),
   h2: css({
     color: colors.white,
-    fontSize: '20px'
+    fontSize: '20px',
+    paddingTop: '17px',
+    paddingLeft: '20px',
   })
 }
